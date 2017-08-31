@@ -67,15 +67,14 @@
           SongPlayer.next = function() {
               var currentSongIndex = getSongIndex(SongPlayer.currentSong);
               currentSongIndex++;
-              var length = currentAlbum.songs.length
 
-              if (currentSongIndex > length) {
-                 stopSong()
-              } else {
-                  var song = currentAlbum.songs[currentSongIndex];
-                  setSong(song);
-                  playSong(song);
-             }
+              if (currentSongIndex >= currentAlbum.songs.length) {
+                 currentSongIndex = 0
+              }
+              var song = currentAlbum.songs[currentSongIndex];
+              setSong(song);
+              playSong(song);
+
           };
 
           /**
