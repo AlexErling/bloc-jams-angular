@@ -11,11 +11,16 @@
          */
         var currentBuzzObject = null;
 
+       SongPlayer.currentVolume = 80;
 
+       SongPlayer.maxVolume = 100;
 
-        SongPlayer.setVolume(volume) {
-          currentBuzzObject.setVolume(volume)
-        }
+       SongPlayer.setVolume = function(volume){
+         if (currentBuzzObject) {
+             currentBuzzObject.setVolume(volume);
+         }
+       };
+
 
           /**
           * @function setSong
