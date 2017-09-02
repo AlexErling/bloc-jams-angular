@@ -11,6 +11,12 @@
          */
         var currentBuzzObject = null;
 
+
+
+        SongPlayer.setVolume(volume) {
+          currentBuzzObject.setVolume(volume)
+        }
+
           /**
           * @function setSong
           * @desc Stops currently playing song and loads new audio file as currentBuzzObject
@@ -29,7 +35,7 @@
              });
 
              currentBuzzObject.bind('timeupdate', function() {
-                 $rootScope.$apply(function() {
+                 $rootScope.$apply(function() {2
                      SongPlayer.currentTime = currentBuzzObject.getTime();
                  });
              });
